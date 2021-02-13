@@ -13,27 +13,84 @@
 			}   
 			.by{ 
 				position: absolute;   
-				top: 88%;   
-				left: 43%;   
+				top: 86%;   
+				left: 40%;   
 			}  
-		</style>  
+			.bginput{ 
+				position: absolute;   
+				top: 93%;   
+				left: 85%;   
+			}  
+		</style>
+
+		 <script type="text/javascript">
+			var i=1;
+			function dark() {
+				var bodycss = document.getElementById("body");
+				var pcss = document.getElementById("p");
+				if (i==1){
+					bodycss.style.cssText='background-color:black';
+					pcss.style.cssText='font-size:120px;text-align:center;color:white;';
+					document.getElementById("buttontext").innerHTML = "白色主题";
+					i=0;
+				}
+				else {
+					bodycss.style.cssText='background-color:white';
+					pcss.style.cssText='font-size:120px;text-align:center;color:#404040;';
+					document.getElementById("buttontext").innerHTML = "黑色主题";
+					i=1;
+				}
+			}
+			
+			function change() {
+				str=(Math.floor(Math.random() * 93)+1).toString();
+				document.getElementById("ar").innerHTML = str;
+				var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/model/pio/model"+str+".json";
+				loadlive2d("live2d", getmodel);
+			}
+			
+			function inputchange() {
+				var input=document.getElementById("numb").value;
+				if (isNaN(input) || (input>=1 && input<=93))
+				{
+					str=input.toString();
+					document.getElementById("ar").innerHTML = str;
+					var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/model/pio/model"+str+".json";
+					loadlive2d("live2d", getmodel);
+				}
+			}
+			
+			function changebackground() {
+				var input=document.getElementById("inputbackground").value;
+				var bodycss = document.getElementById("body");
+				var pcss = document.getElementById("p");
+				bodycss.style.cssText='background-image:url('+input+');background-size:cover';
+				pcss.style.cssText='font-size:120px;text-align:center;color:#404040;';
+			}
+		</script>
 	</head>
-	<body>
+	
+	<body id="body">
+		<p style="font-size:120px;text-align:center;color:#404040;" id="p"><span id="time" class="center-in-center"></span></p>
 		
-		<p style="font-size:120px;text-align:center;"><span id="time" class="center-in-center"></span></p>
-		
-		<p style="font-size:15px;text-align:center;" class="by">
-			Ver3.0.3</br>
+		<p style="font-size:15px;text-align:center;color:#404040;" class="by" id="p">
+			<button onclick="dark()"><span id="buttontext"></span></button>
+			<button onclick="change()">随机换装</button><input id="numb" style="width: 10%;"><button onclick="inputchange()">换装</button></br>
+			Ver3.0.7</br>
 			ModelNO.<span id="ar"></span></br>
 			Copyright © by 循幻空 All Rights Reserved.
 		</p>
-
+		
+		<p class="bginput"><input id="inputbackground"><button onclick="changebackground()">背景</button></p>
+		
 		<div id="landlord" style="text-align:left;float:left;">
 			<div class="message" style="opacity:0"></div>
 			<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
 			<div class="hide-button">隐藏</div>
 		</div>
 
+		<script type="text/javascript">document.getElementById("buttontext").innerHTML = "黑色主题";</script>
+		
 		<script>
 			function show(){
 				var date = new Date();
