@@ -21,7 +21,7 @@
 	<p style="font-size:120px;text-align:center;"><span id="time" class="center-in-center"></span></p>
 	
 	<p style="font-size:15px;text-align:center;" class="by">
-		Ver3.0.0</br>
+		Ver3.0.1</br>
 		ModelNO.<span id="ar"></span></br>
 		Copyright © by 循幻空 All Rights Reserved.
 	</p>
@@ -70,7 +70,7 @@
 		var num = url.indexOf('?');	
 		var str = url.substring(num + 1, url.length);
 		var arr = str.split('=');
-		if (str[0]=="f") str=(Math.floor(Math.random() * 93)+1).toString();
+		if (num==-1) str=(Math.floor(Math.random() * 93)+1).toString();
 		document.getElementById("ar").innerHTML = str;
 		var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/model/pio/model"+str+".json";
 		loadlive2d("live2d", getmodel);
