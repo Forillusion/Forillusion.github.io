@@ -1,79 +1,80 @@
 <!DOCTYPE html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel='stylesheet' id='saukra_css-css'  href='https://cdn.jsdelivr.net/gh/mashirozx/Sakura@3.3.8/style.min.css?ver=3.3.8' type='text/css' media='all' />
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/css/live2d.css">
-	<style type="text/css">   
-        .center-in-center{ 
-            position: absolute;   
-            top: 35%;   
-            left: 20%;   
-        }   
-		.by{ 
-            position: absolute;   
-            top: 88%;   
-            left: 43%;   
-        }  
-    </style>  
-</head>
-<body>
-	
-	<p style="font-size:120px;text-align:center;"><span id="time" class="center-in-center"></span></p>
-	
-	<p style="font-size:15px;text-align:center;" class="by">
-		Ver3.0.1</br>
-		ModelNO.<span id="ar"></span></br>
-		Copyright © by 循幻空 All Rights Reserved.
-	</p>
+<html>
+	<head>
+		<title>Time</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel='stylesheet' id='saukra_css-css'  href='https://cdn.jsdelivr.net/gh/mashirozx/Sakura@3.3.8/style.min.css?ver=3.3.8' type='text/css' media='all' />
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/css/live2d.css">
+		<style type="text/css">   
+			.center-in-center{ 
+				position: absolute;   
+				top: 35%;   
+				left: 20%;   
+			}   
+			.by{ 
+				position: absolute;   
+				top: 88%;   
+				left: 43%;   
+			}  
+		</style>  
+	</head>
+	<body>
+		
+		<p style="font-size:120px;text-align:center;"><span id="time" class="center-in-center"></span></p>
+		
+		<p style="font-size:15px;text-align:center;" class="by">
+			Ver3.0.2</br>
+			ModelNO.<span id="ar"></span></br>
+			Copyright © by 循幻空 All Rights Reserved.
+		</p>
 
-	<div id="landlord" style="text-align:left;float:left;">
-		<div class="message" style="opacity:0"></div>
-		<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-		<div class="hide-button">隐藏</div>
-	</div>
+		<div id="landlord" style="text-align:left;float:left;">
+			<div class="message" style="opacity:0"></div>
+			<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+			<div class="hide-button">隐藏</div>
+		</div>
 
-	
-	<script>
-		function show(){
-			var date = new Date();
-			var year = date.getFullYear();
-			var month = date.getMonth()+1;
-			month=month<10?"0"+month:month;
-			var day = date.getDate();
-			day=day<10?"0"+day:day;
-			var week = date.getDay();
-			var hour = date.getHours();
-			hour= hour<10?"0"+ hour: hour;
-			var minute = date.getMinutes();
-			minute=minute<10?"0"+minute:minute;
-			var second = date.getSeconds();
-			second=second<10?"0"+second:second;
-			var result = year+"."+month+"."+day+" "+hour+":"+minute+":"+second ;
-			document.getElementById("time").innerHTML = result;
-		}
-		show();
-		setInterval("show()",1000);
-	</script>
-	
-	<script id="c_n_script" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/point/point.js" color="240,230,140" opacity="1" count="175" zindex="-2"></script>
-	
-	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-	<script type="text/javascript">
-		var message_Path = 'https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/'
-		var home_Path = 'http://127.0.0.1:81/'  //此处修改为你的域名，必须带斜杠
-	</script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/js/live2d.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/js/message.js"></script>
-	
-	<script type="text/javascript">
-		var url = window.location.href;
-		var num = url.indexOf('?');	
-		var str = url.substring(num + 1, url.length);
-		var arr = str.split('=');
-		if (num==-1) str=(Math.floor(Math.random() * 93)+1).toString();
-		document.getElementById("ar").innerHTML = str;
-		var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/model/pio/model"+str+".json";
-		loadlive2d("live2d", getmodel);
-	</script>
-
-</body>
+		<script>
+			function show(){
+				var date = new Date();
+				var year = date.getFullYear();
+				var month = date.getMonth()+1;
+				month=month<10?"0"+month:month;
+				var day = date.getDate();
+				day=day<10?"0"+day:day;
+				var week = date.getDay();
+				var hour = date.getHours();
+				hour= hour<10?"0"+ hour: hour;
+				var minute = date.getMinutes();
+				minute=minute<10?"0"+minute:minute;
+				var second = date.getSeconds();
+				second=second<10?"0"+second:second;
+				var result = year+"."+month+"."+day+" "+hour+":"+minute+":"+second ;
+				document.getElementById("time").innerHTML = result;
+			}
+			show();
+			setInterval("show()",1000);
+		</script>
+		
+		<script id="c_n_script" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/point/point.js" color="240,230,140" opacity="1" count="175" zindex="-2"></script>
+		
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<script type="text/javascript">
+			var message_Path = 'https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/'
+			var home_Path = 'http://127.0.0.1:81/'  //此处修改为你的域名，必须带斜杠
+		</script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/js/live2d.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/js/message.js"></script>
+		
+		<script type="text/javascript">
+			var url = window.location.href;
+			var num = url.indexOf('?');	
+			var str = url.substring(num + 1, url.length);
+			var arr = str.split('=');
+			if (num==-1) str=(Math.floor(Math.random() * 93)+1).toString();
+			document.getElementById("ar").innerHTML = str;
+			var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/model/pio/model"+str+".json";
+			loadlive2d("live2d", getmodel);
+		</script>
+	</body>
+</html>
