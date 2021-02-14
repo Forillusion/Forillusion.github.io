@@ -4,7 +4,7 @@
 		<title>Time</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel='stylesheet' id='saukra_css-css'  href='https://cdn.jsdelivr.net/gh/mashirozx/Sakura@3.3.8/style.min.css?ver=3.3.8' type='text/css' media='all' />
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/css/live2d.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.6/live2d/css/live2d.css">
 		<style type="text/css">   
 			.center-in-center{ 
 				position: absolute;   
@@ -45,7 +45,7 @@
 			function change() {
 				str=(Math.floor(Math.random() * 93)+1).toString();
 				document.getElementById("ar").innerHTML = str;
-				var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/model/pio/model"+str+".json";
+				var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.6/live2d/model/pio/model"+str+".json";
 				loadlive2d("live2d", getmodel);
 			}
 			
@@ -55,7 +55,7 @@
 				{
 					str=input.toString();
 					document.getElementById("ar").innerHTML = str;
-					var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/model/pio/model"+str+".json";
+					var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.6/live2d/model/pio/model"+str+".json";
 					loadlive2d("live2d", getmodel);
 				}
 			}
@@ -75,8 +75,8 @@
 		
 		<p style="font-size:15px;text-align:center;color:#404040;" class="by" id="p">
 			<button onclick="dark()"><span id="buttontext"></span></button>
-			<button onclick="change()">随机换装</button><input id="numb" style="width: 10%;"><button onclick="inputchange()">换装</button></br>
-			Ver3.0.7</br>
+			<input id="numb" style="width: 10%;"><button onclick="inputchange()" class="inputbutton">换装</button></br>
+			Ver3.0.9</br>
 			ModelNO.<span id="ar"></span></br>
 			Copyright © by 循幻空 All Rights Reserved.
 		</p>
@@ -87,6 +87,7 @@
 			<div class="message" style="opacity:0"></div>
 			<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
 			<div class="hide-button">隐藏</div>
+			<div class="switch-button">换装</div>
 		</div>
 
 		<script type="text/javascript">document.getElementById("buttontext").innerHTML = "黑色主题";</script>
@@ -113,15 +114,15 @@
 			setInterval("show()",1000);
 		</script>
 		
-		<script id="c_n_script" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/point/point.js" color="240,230,140" opacity="1" count="175" zindex="-2"></script>
+		<script id="c_n_script" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.6/point/point.js" color="240,230,140" opacity="1" count="175" zindex="-2"></script>
 		
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 		<script type="text/javascript">
-			var message_Path = 'https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/'
+			var message_Path = 'https://cdn.jsdelivr.net/gh/Forillusion/time@v1.6/live2d/'
 			var home_Path = 'http://127.0.0.1:81/'  //此处修改为你的域名，必须带斜杠
 		</script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/js/live2d.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/js/message.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.6/live2d/js/live2d.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.6/live2d/js/message.js"></script>
 		
 		<script type="text/javascript">
 			var url = window.location.href;
@@ -130,7 +131,7 @@
 			var arr = str.split('=');
 			if (num==-1) str=(Math.floor(Math.random() * 93)+1).toString();
 			document.getElementById("ar").innerHTML = str;
-			var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.5/live2d/model/pio/model"+str+".json";
+			var getmodel="https://cdn.jsdelivr.net/gh/Forillusion/time@v1.6/live2d/model/pio/model"+str+".json";
 			loadlive2d("live2d", getmodel);
 		</script>
 	</body>
